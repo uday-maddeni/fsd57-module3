@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>hi</title>
+</head>
+<body>
+Go to <a href="HiServlet">HiServlet</a>
+<br><br>
+Go to <a href="HelloServlet">HelloServlet</a>
+</body>
+</html>

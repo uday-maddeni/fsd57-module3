@@ -1,0 +1,12 @@
+127.0.0.1 - - [03/Jan/2024:22:04:40 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:04:40 +0530] "GET /EmpWebApp/Login.html HTTP/1.1" 200 465
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:04:57 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 404 777
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:05:26 +0530] "GET /EmpWebApp/Login.html HTTP/1.1" 200 464
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:05:34 +0530] "GET /EmpWebApp/LoginServlet?emailid=HR&password=HR HTTP/1.1" 404 777
+127.0.0.1 - - [03/Jan/2024:22:09:13 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:09:14 +0530] "GET /EmpWebApp/Login.html HTTP/1.1" 200 465
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:09:22 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 500 8
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:09:30 +0530] "GET /EmpWebApp/LoginServlet HTTP/1.1" 500 8
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:10:31 +0530] "GET /EmpWebApp/Login.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:10:48 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 122
+0:0:0:0:0:0:0:1 - - [03/Jan/2024:22:10:59 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 118
