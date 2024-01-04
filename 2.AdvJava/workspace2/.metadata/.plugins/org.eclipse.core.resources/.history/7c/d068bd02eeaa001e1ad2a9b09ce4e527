@@ -1,0 +1,10 @@
+package com.dto;
+
+public class Snippet {
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + ", gender=" + gender
+				+ ", emailId=" + emailId + ", password=" + password + "]";
+	}
+}
+
