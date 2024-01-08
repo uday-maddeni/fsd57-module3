@@ -27,7 +27,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		EmployeeDAO empDao = new EmployeeDAO();
 		Employee emp = empDao.getEmployeeById(empId);
 
-		RequestDispatcher rd = request.getRequestDispatcher("HRHomePage.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("HRHomePage");
 		rd.include(request, response);
 
 		out.println("<center>");

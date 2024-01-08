@@ -33,7 +33,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("<html>");
 		if (emailId.equalsIgnoreCase("HR") && password.equals("HR")) {			
 			
-			RequestDispatcher rd = request.getRequestDispatcher("HRHomePage.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("HRHomePage");
 			rd.forward(request, response);
 			
 		} else {			
@@ -47,7 +47,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			    //Store Employee information(Object) under Session
 			    session.setAttribute("emp", emp);
 				
-				RequestDispatcher rd = request.getRequestDispatcher("EmpHomePage.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("EmpHomePage");
 				rd.forward(request, response);
 				
 			} else {

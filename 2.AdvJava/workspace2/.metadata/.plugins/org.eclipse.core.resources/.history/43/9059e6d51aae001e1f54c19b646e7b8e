@@ -29,7 +29,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 		//OR
 		
-		request.getRequestDispatcher("EmpHomePage.jsp").include(request, response);
+		request.getRequestDispatcher("EmpHomePage").include(request, response);
 		
 		out.println("<table border='2' align='center'>");
 
