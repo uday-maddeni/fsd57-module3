@@ -1,80 +1,72 @@
 package com.dto;
 
 public class Employee {
-	private int empno;
-	private String ename;
-	private double sal;
+	private int empId;
+	private String empName;
+	private double salary;
 	private String gender;
-	private String email;
+	private String emailId;
 	private String password;
 	
 	public Employee() {
 		super();
 	}
 
-	public Employee(int empno, String ename, double sal, String gender, String email, String password) {
+	public Employee(int empId, String empName, double salary, String gender, String emailId, String password) {
 		super();
-		this.empno = empno;
-		this.ename = ename;
-		this.sal = sal;
+		this.empId = empId;
+		this.empName = empName;
+		this.salary = salary;
 		this.gender = gender;
-		this.email = email;
+		this.emailId = emailId;
 		this.password = password;
 	}
 
-
-
-	public int getEmpno() {
-		return empno;
+	public int getEmpId() {
+		return empId;
+	}
+	public void setEmpId(int empId) {
+		this.empId = empId;
 	}
 
-	public void setEmpno(int empno) {
-		this.empno = empno;
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
 	}
 
-	public String getEname() {
-		return ename;
+	public double getSalary() {
+		return salary;
 	}
-
-	public void setEname(String ename) {
-		this.ename = ename;
-	}
-
-	public double getSal() {
-		return sal;
-	}
-
-	public void setSal(double sal) {
-		this.sal = sal;
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
 
 	public String getGender() {
 		return gender;
 	}
-
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailId() {
+		return emailId;
 	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empno + ", empName=" + ename + ", salary=" + sal + ", gender=" + gender
-				+ ", emailId=" + email + ", password=" + password + "]";
+		return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + ", gender=" + gender
+				+ ", emailId=" + emailId + ", password=" + password + "]";
 	}
 }

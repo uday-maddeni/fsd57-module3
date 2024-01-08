@@ -1,3 +1,4 @@
+
 package com.web;
 
 import java.io.IOException;
@@ -9,33 +10,37 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.dao.EmployeeDAO;
 import com.dto.Employee;
 
-
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
-	
-	
+
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		String email = request.getParameter("email");
+		String emailId = request.getParameter("emailId");
 		String password = request.getParameter("password");
 		
+		//Session object to store emailId
+		HttpSession session = request.getSession(true);
+		session.setAttribute("emailId", emailId);
+		
 		out.println("<html>");
-		if (email.equalsIgnoreCase("HR") && password.equals("HR")) {	
+		if (emailId.equalsIgnoreCase("HR") && password.equals("HR")) {			
 			
 			RequestDispatcher rd = request.getRequestDispatcher("HRHomePage");
-			rd.forward(request, response);		
+			rd.forward(request, response);
 			
 		} else {			
 			
+			
 			EmployeeDAO empDao = new EmployeeDAO();
-			Employee emp = empDao.empLogin(email, password);
+			Employee emp = empDao.empLogin(emailId, password);
 			
 			if (emp != null) {
 				
@@ -50,6 +55,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				RequestDispatcher rd = request.getRequestDispatcher("Login.html");
 				rd.include(request, response);
 			}
+			
 			
 		}
 		out.println("</center>");

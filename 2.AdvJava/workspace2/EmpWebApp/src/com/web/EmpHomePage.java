@@ -1,3 +1,4 @@
+
 package com.web;
 
 import java.io.IOException;
@@ -12,25 +13,27 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/EmpHomePage")
 public class EmpHomePage extends HttpServlet {
 
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		String email = request.getParameter("email");
-		out.println("<h3 style='color:green'>Welcome "+email+"!</h3>");
+		String emailId = request.getParameter("emailId");
 		
-		out.println("<html>");
 		out.println("<body bgcolor='lightyellow' text='green'>");
-		out.println("<form align='right'>");
-		out.println("<a href='Logout'>Logout</a>");
-		out.println("</form>");
+		
+		//For UserName
+		out.print("<h3 style='color:red;'>Welcome " + emailId + "!</h3>");
+		
+		//For Logout
+		out.print("<form align='right'>");
+		out.print("<a href='Logout'>Logout</>");
+		out.print("<form>");
+		
 		out.println("<center>");
-		out.println("<h1>Welcome to EmpHomePage</h1>");			
+		out.println("<h1>Welcome to EmpHomePage</h1>");
+		out.println("<h3><a href=''>Profile</a></h3>");
 		out.println("</center>");
 		out.println("</body>");
-		out.println("</html>");
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
