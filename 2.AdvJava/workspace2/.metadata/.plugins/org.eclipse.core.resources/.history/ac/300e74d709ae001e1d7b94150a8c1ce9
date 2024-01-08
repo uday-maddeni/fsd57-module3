@@ -31,7 +31,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 		//For Logout
 		out.print("<form align='right'>");
-		out.print("<a href='HRHomePage'>Home</a> &nbsp;");
 		out.print("<a href='Logout'>Logout</>");
 		out.print("<form>");
 		out.println("<center>");
