@@ -33,7 +33,7 @@
 			<td> ${ emp.salary  } </td>
 			<td> ${ emp.gender  } </td>
 			<td> ${ emp.emailId } </td>
-			<td> <a href='EditEmployee?empId=${emp.empId}'>Edit</a>   </td>
+			<td> Edit   </td>
 			<td> <a href='DeleteEmployee?empId=${emp.empId}'>Delete</a> </td>
 		</tr>
 		

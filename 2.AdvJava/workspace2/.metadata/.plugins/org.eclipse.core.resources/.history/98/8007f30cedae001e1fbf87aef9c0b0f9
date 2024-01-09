@@ -195,7 +195,7 @@ public int deleteEmployee(int empId) {
 	Connection con = DbConnection.getConnection();
 	PreparedStatement pst = null;
 	
-	String deleteQuery = "delete from employ where empId=?";
+	String deleteQuery = "delete from employee where empId=?";
 	
 	
 	try {

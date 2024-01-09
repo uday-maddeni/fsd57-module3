@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>UpdateEmployee</title>
+</head>
+<body>
+<h1 align='center'>Update Employee Record</h1>
+
+<form action="EditEmployee" method="post">
+
+	<table align="center">
+		<tr>
+			<td>EmpName</td>
+			<td><input type="text" name="empName" /></td>
+		</tr>
+		<tr>
+			<td>Salary</td>
+			<td><input type="text" name="salary" /></td>
+		</tr>
+		<tr>
+			<td>Gender</td>
+			<td>
+				<select name="gender">
+					<option value="" selected>Select Gender</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+					<option value="Others">Others</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>EmailId</td>
+			<td><input type="text" name="emailId" /></td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td><input type="password" name="password" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<button>Register</button> Already User? <a href="Login.html">SignIn</a>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
