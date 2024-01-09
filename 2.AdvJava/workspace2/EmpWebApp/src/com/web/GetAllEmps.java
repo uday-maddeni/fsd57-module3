@@ -1,9 +1,8 @@
-
 package com.web;
 
-import java.util.List;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,6 +17,8 @@ import com.dto.Employee;
 @WebServlet("/GetAllEmps")
 public class GetAllEmps extends HttpServlet {
 
+       
+	
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
@@ -26,42 +27,31 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		EmployeeDAO empDao = new EmployeeDAO();		
 		List<Employee> empList = empDao.getAllEmployees();
 		
-		RequestDispatcher rd = request.getRequestDispatcher("HRHomePage.jsp");
-		rd.include(request, response);
-		
-		out.println("<center>");
-		
 		if (empList != null) {
 			
-			out.println("<table border=2>");
+			//Storing employees list under request object
+			request.setAttribute("empList", empList);
 			
-			out.println("<tr>");
-			out.println("<th>EmpId</th>");
-			out.println("<th>EmpName</th>");
-			out.println("<th>Salary</th>");
-			out.println("<th>Gender</th>");
-			out.println("<th>Email-Id</th>");
-			out.println("</tr>");
-			
-			for (Employee emp : empList) {
-				out.println("<tr>");
-				out.println("<td>" + emp.getEmpId()   + "</td>");
-				out.println("<td>" + emp.getEmpName() + "</td>");
-				out.println("<td>" + emp.getSalary()  + "</td>");
-				out.println("<td>" + emp.getGender()  + "</td>");
-				out.println("<td>" + emp.getEmailId() + "</td>");
-				out.println("</tr>");
-			}
-			
-			out.println("</table>");			
+			RequestDispatcher rd = request.getRequestDispatcher("GetAllEmps.jsp");
+			rd.forward(request, response);			
 		
-		} else {			
+		} else {	
+			
+			RequestDispatcher rd = request.getRequestDispatcher("HRHomePage.jsp");
+			rd.include(request, response);
+			
+			out.println("<center>");
 			out.println("<h1 style='color:red;'>Unable to Fetch the Employee Record(s)!!!</h1>");	
+			out.println("</center>");
 		}
-		out.println("</center>");
-	}
+}
+		
+		
+	
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		doGet(request, response);
 	}
 

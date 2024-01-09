@@ -1,4 +1,3 @@
-
 package com.web;
 
 import java.io.IOException;
@@ -14,8 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.EmployeeDAO;
 import com.dto.Employee;
 
+
 @WebServlet("/GetEmpById")
 public class GetEmpById extends HttpServlet {
+
 
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -27,44 +28,28 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		EmployeeDAO empDao = new EmployeeDAO();
 		Employee emp = empDao.getEmployeeById(empId);
 
-		RequestDispatcher rd = request.getRequestDispatcher("HRHomePage.jsp");
-		rd.include(request, response);
-
-		out.println("<center>");
-
 		if (emp != null) {
 
-			out.println("<table border=2>");
+			//Store the emp data under request object
+			request.setAttribute("emp", emp);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("GetEmployeeById.jsp");
+			rd.forward(request, response);
 
-			out.println("<tr>");
-			out.println("<th>EmpId</th>");
-			out.println("<th>EmpName</th>");
-			out.println("<th>Salary</th>");
-			out.println("<th>Gender</th>");
-			out.println("<th>Email-Id</th>");
-			out.println("</tr>");
-
-
-			out.println("<tr>");
-			out.println("<td>" + emp.getEmpId()   + "</td>");
-			out.println("<td>" + emp.getEmpName() + "</td>");
-			out.println("<td>" + emp.getSalary()  + "</td>");
-			out.println("<td>" + emp.getGender()  + "</td>");
-			out.println("<td>" + emp.getEmailId() + "</td>");
-			out.println("</tr>");
-
-
-			out.println("</table>");
-
-		} else {			
+		} else {
+			RequestDispatcher rd = request.getRequestDispatcher("HRHomePage.jsp");
+			rd.include(request, response);
+			
+			out.println("<center>");
 			out.println("<h1 style='color:red;'>Employee Record Not Found!!!</h1>");	
+			out.println("</center>");
 		}
-		out.println("</center>");
+		
 	}
-
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		doGet(request, response);
 	}
 
 }
+

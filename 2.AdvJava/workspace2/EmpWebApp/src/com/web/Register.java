@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.EmployeeDAO;
 import com.dto.Employee;
 
+
 @WebServlet("/Register")
 public class Register extends HttpServlet {
 
+	
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
@@ -50,9 +52,14 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		}
 		out.println("<center>");
 	}
+    
+    
+	
+	
 
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		doGet(request, response);
 	}
 

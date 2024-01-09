@@ -15,7 +15,7 @@ import com.dto.Employee;
 
 @WebServlet("/Profile")
 public class Profile extends HttpServlet {
-	
+	private static final long serialVersionUID = 1L;
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
@@ -54,8 +54,9 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("</table>");
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+				doGet(request, response);
 	}
 
 }
