@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<jsp:include page="HRHomePage.jsp" />
+	<%@ include file="HRHomePage.jsp" %>
 
 			<table border="2" align="center">
 

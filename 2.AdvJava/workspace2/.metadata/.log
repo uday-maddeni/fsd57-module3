@@ -1437,3 +1437,9 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 
 !ENTRY org.eclipse.jface.text 2 0 2024-01-09 12:55:35.771
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2024-01-09 15:58:01.254
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2024-01-09 15:58:01.262
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

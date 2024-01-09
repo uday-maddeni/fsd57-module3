@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <jsp:include page="HRHomePage.jsp" />
+  <%@include file ="HRHomePage.jsp" %>
 
 <br/>
 <form action="GetEmpById" method="post">

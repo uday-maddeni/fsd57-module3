@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<jsp:include page="HRHomePage.jsp" />
+	<%@ include file="HRHomePage.jsp" %>
 
 	<% List<Employee> empList = (List<Employee>) request.getAttribute("empList"); %>
 
