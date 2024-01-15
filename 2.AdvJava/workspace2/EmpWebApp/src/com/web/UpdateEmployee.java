@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.EmployeeDAO;
 import com.dto.Employee;
 
-/**
- * Servlet implementation class UpdateEmployee
- */
+
 @WebServlet("/UpdateEmployee")
 public class UpdateEmployee extends HttpServlet {
 	

@@ -4,19 +4,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Employee Home</title>
 </head>
 
 
-<body bgcolor='lightyellow' text='red'>
+<body bgcolor='lightyellow' text='green'>
 			<%String emailId = (String) session.getAttribute("emailId");%>
 			
-			<h3 style = 'color:red'>Welcome<%= emailId%>!</h3>
+			<h3 style = 'color:red'>Welcome <%=emailId %> !</h3>
 			
 			<form align='right'>
 			<a href='EmpHomePage'>Home</a> 
-			<a href='Logout'>Logout</>
-			<form>
+			<a href='Logout'>Logout</a>
+			</form>
 
 			<center>
 			<h1>Welcome to EmpHomePage</h1>			
