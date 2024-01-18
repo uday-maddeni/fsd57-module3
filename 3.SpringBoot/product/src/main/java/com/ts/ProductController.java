@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dao.ProductDao;
@@ -30,6 +35,31 @@ public class ProductController {
 		product.setPrice(45000.00);
 		
 		return product;
+	}
+	
+	@GetMapping("getProductById/{productId}")
+	public Product getProductById(@PathVariable("productId") int productId) {
+		return productDao.getProductById(productId);	
+	}
+	
+	@GetMapping("getProductByName/{productName}")
+	public List<Product> getProductByName(@PathVariable("productName") String productName) {
+		return productDao.getProductByName(productName);
+	}
+	
+	@PostMapping("addProduct")
+	public Product addProduct(@RequestBody Product product) {
+		return productDao.addProduct(product);
+	}
+	
+	@PutMapping("updateProduct")
+	public Product updateProduct(@RequestBody Product product){
+		return productDao.updateProduct(product);
+	}
+	
+	@DeleteMapping("deleteProductById/{productId}")
+	public void deleteProductById(@PathVariable("productId") int productId) {
+		productDao.deleteProductById(productId);	
 	}
 	
 	@GetMapping("getProducts")
