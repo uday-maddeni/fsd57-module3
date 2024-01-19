@@ -58,8 +58,8 @@ public class ProductController {
 	}
 	
 	@DeleteMapping("deleteProductById/{productId}")
-	public void deleteProductById(@PathVariable("productId") int productId) {
-		productDao.deleteProductById(productId);	
+	public Product deleteProductById(@PathVariable("productId") int productId) {
+		return productDao.deleteProductById(productId);	
 	}
 	
 	@GetMapping("getProducts")

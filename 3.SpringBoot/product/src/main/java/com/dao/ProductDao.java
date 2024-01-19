@@ -39,8 +39,9 @@ public class ProductDao {
 		}
 	}
 	
-	public void deleteProductById(int productId){
+	public Product deleteProductById(int productId){
 		productRepository.deleteById(productId);
+		return new Product(0, "Product deleted successfully!!!", 0.0);
 	}
 	
 }

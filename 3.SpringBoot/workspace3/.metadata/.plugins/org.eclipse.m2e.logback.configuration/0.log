@@ -1,0 +1,39 @@
+2024-01-19 09:36:45,175 [Worker-8] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-01-19 09:36:50,268 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ts:EmpDept:0.0.1-SNAPSHOT @ C:\fsd57-module3\3.SpringBoot\EmpDept\pom.xml.
+2024-01-19 09:36:54,901 [Worker-8] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EmpDept/src/main/java
+2024-01-19 09:36:54,901 [Worker-8] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EmpDept/src/main/resources
+2024-01-19 09:36:54,912 [Worker-8] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EmpDept/src/main/resources
+2024-01-19 09:36:54,930 [Worker-8] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EmpDept/src/test/java
+2024-01-19 09:36:59,348 [Worker-8] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 14 sec
+2024-01-19 09:37:00,642 [Worker-19] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-01-19 09:37:00,678 [Worker-19] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-01-19 09:37:00,683 [Worker-19] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\fsd57-module3\3.SpringBoot\EmpDept\src\test\resources
+2024-01-19 09:38:24,298 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ts:EmpDept:0.0.1-SNAPSHOT @ C:\fsd57-module3\3.SpringBoot\EmpDept\pom.xml.
+2024-01-19 09:38:33,331 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-01-19 09:38:33,332 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2024-01-19 09:38:33,338 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-01-19 09:38:33,339 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-01-19 09:38:33,344 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-01-19 09:38:33,345 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2024-01-19 09:38:33,345 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\fsd57-module3\3.SpringBoot\EmpDept\src\test\resources
+2024-01-19 09:38:36,344 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-01-19 09:38:36,344 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2024-01-19 09:38:36,351 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-01-19 09:38:36,385 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-01-19 09:38:36,390 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-01-19 09:38:36,390 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2024-01-19 09:38:36,391 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\fsd57-module3\3.SpringBoot\EmpDept\src\test\resources
+2024-01-19 09:38:51,045 [Worker-12] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-01-19 09:38:52,505 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ts:EmpDept:0.0.1-SNAPSHOT @ C:\fsd57-module3\3.SpringBoot\EmpDept\pom.xml.
+2024-01-19 09:38:54,857 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EmpDept/src/main/java
+2024-01-19 09:38:54,858 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EmpDept/src/main/resources
+2024-01-19 09:38:54,859 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EmpDept/src/main/resources
+2024-01-19 09:38:54,860 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EmpDept/src/test/java
+2024-01-19 09:38:55,177 [Worker-12] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 4 sec
+2024-01-19 09:38:55,948 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-01-19 09:38:55,948 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2024-01-19 09:38:55,949 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2024-01-19 09:38:55,964 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-01-19 09:38:55,967 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-01-19 09:38:55,967 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2024-01-19 09:38:55,968 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\fsd57-module3\3.SpringBoot\EmpDept\src\test\resources
