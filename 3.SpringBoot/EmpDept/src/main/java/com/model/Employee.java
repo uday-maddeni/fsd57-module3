@@ -1,7 +1,14 @@
 package com.model;
 
-import javax.persistence.*;
 import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.mindrot.jbcrypt.BCrypt;
 
 @Entity
 public class Employee {
@@ -16,29 +23,69 @@ public class Employee {
     private String country;
     private String emailId;
     private String password;
+    private String phoneNumber;
+    private String otp;
+
+    // Implementing Mapping Between Employee and Department
+    @ManyToOne
+    @JoinColumn(name = "deptId")
+    Department department;
 
     public Employee() {
     }
 
-    public Employee(String empName, double salary, String gender, Date doj, String country, String emailId, String password) {
+    // Parameterized Constructor without empId
+    public Employee(String empName, double salary, String gender, Date doj, String country, String emailId,
+            String password, String phoneNumber, String otp) {
         this.empName = empName;
         this.salary = salary;
         this.gender = gender;
         this.doj = doj;
         this.country = country;
         this.emailId = emailId;
-        this.password = password;
+        this.password = hashPassword(password);
+        this.phoneNumber = phoneNumber;
+        this.otp = otp;
     }
-    
-    public Employee(int empId, String empName, double salary, String gender, Date doj, String country, String emailId, String password) {
+
+    public Employee(int empId, String empName, double salary, String gender, Date doj, String country, String emailId,
+            String password, String phoneNumber, String otp) {
         this.empId = empId;
-    	this.empName = empName;
+        this.empName = empName;
         this.salary = salary;
         this.gender = gender;
         this.doj = doj;
         this.country = country;
         this.emailId = emailId;
-        this.password = password;
+        this.password = hashPassword(password);
+        this.phoneNumber = phoneNumber;
+        this.otp = otp;
+    }
+
+    public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getOtp() {
+		return otp;
+	}
+
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
+
+	// Generating Getter for department Variable
+    public Department getDepartment() {
+        return department;
+    }
+
+    // Generating Setter for department Variable
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public int getEmpId() {
@@ -98,14 +145,15 @@ public class Employee {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = hashPassword(password);
     }
 
-	@Override
-	public String toString() {
-		return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + ", gender=" + gender
-				+ ", doj=" + doj + ", country=" + country + ", emailId=" + emailId + ", password=" + password + "]";
-	}
-    
-    
+    public boolean checkPassword(String candidatePassword) {
+        return BCrypt.checkpw(candidatePassword, this.password);
+    }
+
+    // Hash the password using BCrypt
+    private String hashPassword(String plainTextPassword) {
+        return BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
+    }
 }
