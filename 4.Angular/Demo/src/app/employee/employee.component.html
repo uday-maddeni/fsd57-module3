@@ -1,4 +1,4 @@
-<h1>Employees Details</h1>
+<h1>Employees Details<!-- class="bg-info text-white" --></h1>
 <div>
     <table border="2px">
         <thead>
@@ -10,19 +10,19 @@
                 <th>doj</th>
                 <th>country</th>
                 <th>emailId</th>
-                <th>password</th>
+                <th>experience</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let emp of employees">
-                <td>{{emp.empId}}</td>
-                <td>{{emp.empName}}</td>
-                <td>{{emp.salary}}</td>
-                <td>{{emp.gender}}</td>
-                <td>{{emp.dateOfJoining}}</td>
+                <td>{{emp.empId }}</td>
+                <td>{{emp.empName | gender: emp.gender | uppercase}}</td>
+                <td>{{emp.salary | currency:"INR"}}</td>
+                <td>{{emp.gender | lowercase}}</td>
+                <td>{{emp.dateOfJoining | date:'dd-MMM-yyyy'}}</td>
                 <td>{{emp.country}}</td>
                 <td>{{emp.emailId}}</td>
-                <td>{{emp.password}}</td>
+                <td>{{emp.dateOfJoining | exp}}</td>
             </tr>
         </tbody>
     </table>

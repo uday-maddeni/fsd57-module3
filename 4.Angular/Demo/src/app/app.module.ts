@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ShowempbyidComponent } from './showempbyid/showempbyid.component';
 import { ProductsComponent } from './products/products.component';
+import { ExpPipe } from './exp.pipe';
+import { GenderPipe } from './gender.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ProductsComponent } from './products/products.component';
     RegisterComponent,
     EmployeeComponent,
     ShowempbyidComponent,
-    ProductsComponent
+    ProductsComponent,
+    ExpPipe,
+    GenderPipe
   ],
   imports: [
     BrowserModule,

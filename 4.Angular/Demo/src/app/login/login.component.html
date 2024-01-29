@@ -1,20 +1,29 @@
-<div>
+<br/>
+<div class="container">
     <h2>Login Form</h2>
 
-    <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm.value)">
+    <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
         <table>
             <tr>
                 <td>Enter EmailId</td>
-                <td><input type="text" name="emailId" ngModel /></td>
+                <td><input type="text" name="emailId" #emailId="ngModel" ngModel required minlength="2" maxlength="30"/></td>
             </tr>
             <tr>
                 <td>Enter Password</td>
-                <td><input type="password" name="password" ngModel /></td>
+                <td><input type="password" name="password" #password="ngModel" ngModel required minlength="2" maxlength="8" /></td>
             </tr>
             <tr>
                 <td></td>
-                <td><button>Login</button></td>
+                <td><button class="btn btn-primary">Login</button></td>
             </tr>
         </table>
     </form>
+
+    <div>
+        <div *ngIf="emailId.errors?.['required'] && emailId.touched" style="color: red;">Please Enter Email-Id</div>
+        <div *ngIf="password.errors?.['required'] && password.touched" style="color: red;">Please Enter Password</div>
+        
+        <div *ngIf="emailId.errors?.['minlength'] && emailId.touched" style="color: red;">Please Enter Atleast 2 Characters for EmailId</div>
+        <div *ngIf="password.errors?.['minlength'] && password.touched" style="color: red;">Please Enter Atleast 2 Characters for Password</div>
+    </div>
 </div>
