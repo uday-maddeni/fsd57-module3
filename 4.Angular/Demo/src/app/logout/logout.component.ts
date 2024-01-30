@@ -16,11 +16,12 @@ export class LogoutComponent implements OnInit {
   }
   
   constructor(private router : Router, private toastr : ToastrService, private service : EmpService){
+    this.emailId = localStorage.getItem('emailId');
+    this.toastr.success(this.emailId+' is Logout');
     localStorage.removeItem('emailId');
     localStorage.clear();
     service.setIsUserLoggedOut();
     this.emailId = localStorage.getItem('emailId');
-    this.toastr.success(this.emailId+' is Logout');
     this.router.navigate(['login']);
   }
 

@@ -30,11 +30,9 @@
             <tr>
                 <td>Country</td>
                 <td>
-                    <select name="country" ngModel required>
+                    <select name="country" ngModel >
                         <option value="" selected>Select Country</option>
-                        <option value="IND">India</option>
-                        <option value="USA">USA</option>
-                        <option value="CAN">Canada</option>
+                        <option value="{{country.cca3}}" *ngFor="let country of countries">{{country.name.common}}</option>
                     </select>
                 </td>
             </tr>

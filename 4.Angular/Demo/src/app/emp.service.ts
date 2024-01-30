@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,8 +8,12 @@ export class EmpService {
   
   isUserLoggedIn: boolean;
 
-  constructor() { 
+  constructor(private http : HttpClient) { 
     this.isUserLoggedIn = false;
+  }
+
+  getAllCountries() : any {
+    return this.http.get('https://restcountries.com/v3.1/all');
   }
 
   //Login

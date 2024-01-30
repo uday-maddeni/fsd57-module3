@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpService } from '../emp.service';
 
 @Component({
   selector: 'app-register',
@@ -6,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
-    
-  constructor() {
+
+  countries : any;
+
+  constructor(private service : EmpService) {
+
   }
 
   ngOnInit() {
+    this.service.getAllCountries().subscribe((data : any) => {
+      this.countries = data;
+      console.log(data);
+    });
   }
  
 
