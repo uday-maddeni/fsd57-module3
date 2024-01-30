@@ -13,6 +13,10 @@ import { ShowempbyidComponent } from './showempbyid/showempbyid.component';
 import { ProductsComponent } from './products/products.component';
 import { ExpPipe } from './exp.pipe';
 import { GenderPipe } from './gender.pipe';
+import { HeaderComponent } from './header/header.component';
+import { LogoutComponent } from './logout/logout.component';
+import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,16 @@ import { GenderPipe } from './gender.pipe';
     ShowempbyidComponent,
     ProductsComponent,
     ExpPipe,
-    GenderPipe
+    GenderPipe,
+    HeaderComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

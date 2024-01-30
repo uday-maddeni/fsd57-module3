@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +14,9 @@ export class LoginComponent implements OnInit {
 
   employees: any;
   emp: any;
-
-  constructor() {
+  
+  //dependency injection
+  constructor(private router : Router, private toastr : ToastrService) {
     this.employees = [
       {
         empId: 101,
@@ -76,7 +79,9 @@ export class LoginComponent implements OnInit {
   loginSubmit(loginForm: any) {
    
     if (loginForm.emailId == 'HR' && loginForm.password == 'HR') {
-      alert('Login Success: ' + loginForm.emailId);
+      localStorage.setItem("emailId", loginForm.emailId);
+      this.toastr.success('Admin login success');
+      this.router.navigate(['showemps']);
     } else {
 
       this.emp = null;
@@ -88,9 +93,11 @@ export class LoginComponent implements OnInit {
       });
 
       if (this.emp != null) {
-        alert('Login Success: ' + loginForm.emailId);
+        localStorage.setItem("emailId", loginForm.emailId);
+        this.toastr.success('User login success');
+        this.router.navigate(['products']);
       } else {
-        alert('Invalid Credentials');
+        this.toastr.error('Login Failed ?');
       }
 
     }

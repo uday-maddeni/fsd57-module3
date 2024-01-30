@@ -1,56 +1,80 @@
-<h3 align="center">Registration Form</h3>
 
-<form #regForm="ngForm" (ngSubmit)="registerSubmit(regForm.value)">
-    <table align="center">
-        <tr>
-            <td>EmpName</td>
-            <td><input type="text" name="empName" ngModel /></td>
-        </tr>
-        <tr>
-            <td>Salary</td>
-            <td><input type="text" name="salary" ngModel /></td>
-        </tr>
-        <tr>
-            <td>Gender</td>
-            <td>
-                <select name="gender" ngModel >
-                    <option value="" selected>Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Others">Others</option>
-                </select>
-            </td>
-        </tr>
-        
-        <tr>
-            <td>DateOfJoin</td>
-            <td><input type="date" name="doj" ngModel /></td>
-        </tr>
-        
-        <tr>
-            <td>Country</td>
-            <td>
-                <select name="country" ngModel >
-                    <option value="" selected>Select Country</option>
-                    <option value="IND">INDIA</option>
-                    <option value="USA">USA</option>
-                    <option value="CAN">Canada</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>EmailId</td>
-            <td><input type="text" name="emailId" ngModel /></td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td><input type="password" name="password" ngModel /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <button>Register</button>
-            </td>
-        </tr>
-    </table>
-</form>
+<div>
+    <h2 align="center">Registration Form</h2>
+
+    <form #registrationForm="ngForm" (ngSubmit)="registerSubmit(registrationForm.value)">
+        <table align="center">
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" name="empName" ngModel required /></td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td><input type="text" name="salary" ngModel required /></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <select name="gender" ngModel required>
+                        <option value="" selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Date Of Join</td>
+                <td><input type="date" name="doj" ngModel required /></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>
+                    <select name="country" ngModel required>
+                        <option value="" selected>Select Country</option>
+                        <option value="IND">India</option>
+                        <option value="USA">USA</option>
+                        <option value="CAN">Canada</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>EmailId</td>
+                <td>
+                    <input type="text" name="emailId" ngModel #emailId="ngModel" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"  />
+                    <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="error" style="color: red;">
+                        <div *ngIf="emailId.hasError('required')">Email is required.</div>
+                        <div *ngIf="emailId.hasError('pattern')">Enter a valid email.</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td>
+                    <input type="text" name="mobileNumber" ngModel #mobileNumber="ngModel" required pattern="[6789]\d{9}" maxlength="10" />
+                    <div *ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)" class="error" style="color: red;">
+                        <div *ngIf="mobileNumber.hasError('required')">Mobile Number is required.</div>
+                        <div *ngIf="mobileNumber.hasError('pattern')">Enter a valid 10-digit number starting with 6, 7, 8, or 9.</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password" ngModel #password="ngModel" required
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" maxlength="10"  />
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error" style="color: red;">
+                        <div *ngIf="password.hasError('required')" style="color: red;">Password is required.</div>
+                        <div *ngIf="password.hasError('pattern')" style="color: red;">Password must contain at least 8 characters, including 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special symbol.</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
