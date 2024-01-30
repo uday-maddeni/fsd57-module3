@@ -1,20 +1,35 @@
-<br/>
+<head>
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" 
+    crossorigin="anonymous">
+</head>
+
 <div class="container">
     <h2>Login Form</h2>
 
     <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
         <table>
             <tr>
-                <td>Enter EmailId</td>
-                <td><input type="text" name="emailId" #emailId="ngModel" ngModel required minlength="2" maxlength="30"/></td>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Enter Email-Id" name="emailId" #emailId="ngModel" ngModel required minlength="2" maxlength="30"/>
+                    </div>
+                    <br/>
+                </td>
             </tr>
             <tr>
-                <td>Enter Password</td>
-                <td><input type="password" name="password" #password="ngModel" ngModel required minlength="2" maxlength="13" /></td>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input type="password" class="form-control" placeholder="Enter Password" name="password" #password="ngModel" ngModel required minlength="2" maxlength="13" />
+                    </div>
+                    <br/>
+                </td>
             </tr>
             <tr>
-                <td></td>
-                <td><button class="btn btn-primary">Login</button></td>
+                <td><button [disabled]="!loginForm.valid" class="btn btn-primary">Login</button></td>
             </tr>
         </table>
     </form>
