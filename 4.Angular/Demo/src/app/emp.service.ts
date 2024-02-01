@@ -1,19 +1,29 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmpService {
-  
+
   isUserLoggedIn: boolean;
 
-  constructor(private http : HttpClient) { 
+  cartItems: any;
+
+  // Declare an event emitter for cart changes
+  cartChanged: EventEmitter<void> = new EventEmitter<void>();
+
+  constructor(private http: HttpClient) {
     this.isUserLoggedIn = false;
+    this.cartItems = [];
   }
 
-  getAllCountries() : any {
+  getAllCountries(): any {
     return this.http.get('https://restcountries.com/v3.1/all');
+  }
+
+  getAllEmployees(): any {
+    return this.http.get('http://localhost:8085/getEmployees');
   }
 
   //Login
@@ -23,6 +33,24 @@ export class EmpService {
 
   getIsUserLogged(): boolean {
     return this.isUserLoggedIn;
+  }
+
+  addToCart(product: any) {
+    this.cartItems.push(product);
+    this.cartChanged.emit(); // Emit the event when the cart is updated
+  }
+
+  //Cart using Service
+  getCartItems(): any {
+    return this.cartItems;
+  }
+
+  clearCart() {
+    this.cartItems = [];
+  }
+
+  setCartItems(count: any) {
+    this.cartItems = count;
   }
 
   //Logout

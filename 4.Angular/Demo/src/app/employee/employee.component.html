@@ -21,10 +21,10 @@
                 <td>{{emp.empName | gender: emp.gender | uppercase}}</td>
                 <td>{{emp.salary | currency:"INR"}}</td>
                 <td>{{emp.gender | lowercase}}</td>
-                <td>{{emp.dateOfJoining | date:'dd-MMM-yyyy'}}</td>
+                <td>{{emp.doj | date:'dd-MMM-yyyy'}}</td>
                 <td>{{emp.country}}</td>
                 <td>{{emp.emailId}}</td>
-                <td>{{emp.dateOfJoining | exp}}</td>
+                <td>{{emp.doj | exp}}</td>
             </tr>
         </tbody>
     </table>

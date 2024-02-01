@@ -10,10 +10,8 @@
                 <div class="card-body">
                     <h4 class="card-title">{{product.name}}</h4>
                     <p class="card-text">{{product.description}}</p>
-                    <p class="card-text"><b>Price: <s>₹45000/-</s> ₹{{product.price}}/- </b></p>
-                    <p align="right">
-                        <button class="btn btn-primary">AddToCart</button>
-                    </p>
+                    <p class="card-text"><b>Price: <s>₹{{product.price * 1.1}}/-</s> ₹{{product.price}}/- </b></p>
+                    <p align="right"><button (click)="addToCart(product)" class="btn btn-primary">AddToCart</button> </p>
                 </div>
             </div>
         </div>

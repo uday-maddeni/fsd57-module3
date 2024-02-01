@@ -8,6 +8,8 @@ import { ProductsComponent } from './products/products.component';
 import { LogoutComponent } from './logout/logout.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { authGuard } from './auth.guard';
+import { CartComponent } from './cart/cart.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 const routes: Routes = [
   {path:'',            component:LoginComponent},
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path:'showemps',    canActivate:[authGuard], component:EmployeeComponent},
   {path:'showempbyid', canActivate:[authGuard], component:ShowempbyidComponent},
   {path:'products',    canActivate:[authGuard], component:ProductsComponent},
-  {path:'logout',      canActivate:[authGuard], component:LogoutComponent}
+  {path:'cart',        canActivate:[authGuard], component:CartComponent},
+  {path:'logout',      canActivate:[authGuard], component:LogoutComponent},
+  {path:'product-info',canActivate:[authGuard], component:ProductInfoComponent}
 ];
 
 @NgModule({

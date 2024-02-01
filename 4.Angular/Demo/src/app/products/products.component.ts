@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpService } from '../emp.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrl: './products.component.css'
+  styleUrls: ['./products.component.css'] 
+  //styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
   
   products: any;
   emailId : any;
 
-  constructor() {
+  cartProducts : any;
+
+  constructor(private service: EmpService, private router : Router) {
     this.emailId = localStorage.getItem('emailId');
     this.products = [
       {id:1001, name:"Art1",   price:14999.00, description:"No Cost EMI Applicable", imgsrc:"assets/Images/art1.jpg"},
@@ -23,6 +28,24 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  addToCart(product: any) {
+    const isData = localStorage.getItem("singleItem");
+    if(isData == null){
+      const newArr = [];
+      newArr.push(product);
+      localStorage.setItem("singleItem", JSON.stringify(newArr));
+    } else {
+      //const oldData = JSON.parse(isData);
+      localStorage.removeItem("singleItem");
+      const newArr = [];
+      newArr.push(product);
+      localStorage.setItem("singleItem", JSON.stringify(newArr));
+    }
+
+    this.router.navigate(['product-info']);
+
   }
 
 }

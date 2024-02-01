@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpService } from '../emp.service';
 
 @Component({
   selector: 'app-employee',
@@ -9,10 +10,10 @@ export class EmployeeComponent implements OnInit {
   employees : any;
   emailId : any;
 
-  constructor(){
+  constructor(private service : EmpService){
 
     this.emailId = localStorage.getItem('emailId');
-
+/*
     this.employees = [
       {
         empId: 101,
@@ -66,9 +67,15 @@ export class EmployeeComponent implements OnInit {
       }
     
     ];
+    */
+
   }
 
   ngOnInit() {
+    this.service.getAllEmployees().subscribe((data : any) => {
+      this.employees = data;
+      console.log(data);
+    })
   }
 
 }

@@ -18,6 +18,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
     ExpPipe,
     GenderPipe,
     HeaderComponent,
-    LogoutComponent
+    LogoutComponent,
+    CartComponent,
+    ProductInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     ToastrModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
