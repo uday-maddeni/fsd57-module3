@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { CartService } from './cart.service';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CartService } from './cart.service';
     HeaderComponent,
     LogoutComponent,
     CartComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
