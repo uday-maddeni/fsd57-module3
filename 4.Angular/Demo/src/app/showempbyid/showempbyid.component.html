@@ -1,6 +1,6 @@
 <div align="center">
 
-    <form #id="ngForm" (ngSubmit)="getEmpById(id.value)">
+    <form #employee="ngForm" (ngSubmit)="getEmpById(employee.value)">
         <table>
             <tr>
                 <td align="right">Enter Employee ID</td>
@@ -15,37 +15,41 @@
 </div>
 <br/>
 
-<div [ngSwitch]="flag">
-    <div *ngSwitchCase="'empty'"></div>
-    <div *ngSwitchCase="'find'">
-        <table border="2" align="center">
+
+<div *ngIf="emp; else notfound" align="center" class="container">
+    
+        <table class="table table-hover table-striped table-sm table-bordered">
             <thead>
-                <tr>
-                    <th>EmpId</th>
-                    <th>EmpName</th>
-                    <th>Salary</th>
-                    <th>Gender</th>
-                    <th>DateOfJoin</th>
-                    <th>Country</th>
-                    <th>Email-Id</th>
-                    <th>Password</th>
+                <tr align="center">
+                    <th class="bg-info text-white">EmpId</th>
+                    <th class="bg-info text-white">EmpName</th>
+                    <th class="bg-info text-white">Salary</th>
+                    <th class="bg-info text-white">Gender</th>
+                    <th class="bg-info text-white">DateOfJoin</th>
+                    <th class="bg-info text-white">Country</th>
+                    <th class="bg-info text-white">Email-Id</th>
+                    <th class="bg-info text-white">Password</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr >
-                    <td>{{emp.empId}}</td>
-                    <td>{{emp.empName}}</td>
-                    <td>{{emp.salary}}</td>
-                    <td>{{emp.gender}}</td>
-                    <td>{{emp.doj}}</td>
-                    <td>{{emp.country}}</td>
-                    <td>{{emp.emailId}}</td>
-                    <td>{{emp.password}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div *ngSwitchCase="'notfind'">
-        <h4 align="center">Employee record not found</h4>
-    </div>
+        <tbody>
+            <tr align="center">
+                <td>{{emp.empId}}</td>
+                <td>{{emp.empName}}</td>
+                <td>{{emp.salary}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.doj}}</td>
+                <td>{{emp.country}}</td>
+                <td>{{emp.emailId}}</td>
+                <td>{{emp.password}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+
+
+<div>
+    <ng-template #notfound>
+        <h4 align="center">Employee record not found</h4>
+    </ng-template>
+</div>
+

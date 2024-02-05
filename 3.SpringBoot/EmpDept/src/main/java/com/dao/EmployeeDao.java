@@ -47,9 +47,16 @@ public class EmployeeDao {
 		BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
 		String encryptedPwd = bcrypt.encode(employee.getPassword());
 		employee.setPassword(encryptedPwd);
+		System.out.println("------------------------------------------");
+		System.out.println("Number recieved from frontend :"+employee.getPhoneNumber());
+		System.out.println("------------------------------------------");
 
 		// Save the employee
 		Employee savedEmployee = employeeRepository.save(employee);
+		
+		System.out.println("------------------------------------------");
+		System.out.println("Number recieved from database :"+savedEmployee.getPhoneNumber());
+		System.out.println("------------------------------------------");
 
 		// Send a welcome email
 		sendWelcomeEmail(savedEmployee);

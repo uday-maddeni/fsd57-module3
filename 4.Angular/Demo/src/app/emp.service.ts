@@ -26,6 +26,26 @@ export class EmpService {
     return this.http.get('http://localhost:8085/getEmployees');
   }
 
+  getAllDepartments(): any {
+    return this.http.get('http://localhost:8085/getDepartments');
+  }
+
+  getEmployeeById(empId : any): any {
+    return this.http.get('http://localhost:8085/getEmployeeById/'+empId);
+  }
+
+  regsiterEmployee(employee: any): any {
+    return this.http.post('http://localhost:8085/addEmployee', employee);
+  }
+
+  employeeLogin(emailId: any, password: any): any {
+    return this.http.get('http://localhost:8085/empLogin/' + emailId + '/' + password).toPromise();
+  }
+
+  deleteEmployee(empId: any) {
+    return this.http.delete('http://localhost:8085/deleteEmployeeById/' + empId);
+  }
+
   //Login
   setIsUserLoggedIn() {
     this.isUserLoggedIn = true;

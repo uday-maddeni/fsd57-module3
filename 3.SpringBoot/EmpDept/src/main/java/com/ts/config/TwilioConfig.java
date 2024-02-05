@@ -27,6 +27,9 @@ public class TwilioConfig {
     }
 
     public void sendOtp(String to, String otp) {
+    	System.out.println("-------------------------------");
+        System.out.println("Sending OTP to: " + to);
+        System.out.println("OTP to be sent: " + otp);
         Message message = Message.creator(
                 new PhoneNumber(to),
                 new PhoneNumber(twilioPhoneNumber),
