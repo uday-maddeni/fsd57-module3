@@ -46,6 +46,10 @@ export class EmpService {
     return this.http.delete('http://localhost:8085/deleteEmployeeById/' + empId);
   }
 
+  updateEmployee(employee: any) {
+    return this.http.put('http://localhost:8085/updateEmployee', employee);
+  }
+
   //Login
   setIsUserLoggedIn() {
     this.isUserLoggedIn = true;

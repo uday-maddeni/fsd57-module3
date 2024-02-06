@@ -1,44 +1,64 @@
-<head>
-    <link rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" 
-    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" 
-    crossorigin="anonymous">
-</head>
 
 <div class="container">
     <h2>Login Form</h2>
-
+  
     <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
-        <table>
-            <tr>
-                <td>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input type="text" class="form-control" placeholder="Enter Email-Id" name="emailId" #emailId="ngModel" ngModel required minlength="2" maxlength="30"/>
-                    </div>
-                    <br/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" class="form-control" placeholder="Enter Password" name="password" #password="ngModel" ngModel required minlength="2" maxlength="13" />
-                    </div>
-                    <br/>
-                </td>
-            </tr>
-            <tr>
-                <td><button [disabled]="!loginForm.valid" class="btn btn-primary">Login</button></td>
-            </tr>
-        </table>
+      <table>
+        <tr>
+          <td>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" class="form-control" placeholder="Enter Email-Id" name="emailId" #emailId="ngModel"
+                ngModel required minlength="2" maxlength="30" />
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input type="password" class="form-control" placeholder="Enter Password" name="password" #password="ngModel"
+                ngModel required minlength="2" maxlength="8" />
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input type="number" [value]="captcha1">
+              <button (click)="generate()"><span class="glyphicon glyphicon-repeat"></span></button>
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="input-group">
+              <input type="number" class="form-control" placeholder="Enter captch" name="captcha" #captcha="ngModel"
+                ngModel required />
+  
+            </div>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+          </td>
+        </tr>
+      </table>
     </form>
-
+  
     <div>
-        <div *ngIf="emailId.errors?.['required'] && emailId.touched" style="color: red;">Please Enter Email-Id</div>
-        <div *ngIf="password.errors?.['required'] && password.touched" style="color: red;">Please Enter Password</div>
-        
-        <div *ngIf="emailId.errors?.['minlength'] && emailId.touched" style="color: red;">Please Enter Atleast 2 Characters for EmailId</div>
-        <div *ngIf="password.errors?.['minlength'] && password.touched" style="color: red;">Please Enter Atleast 2 Characters for Password</div>
+      <div *ngIf="emailId.errors?.['required'] && emailId.touched" style="color: red;">Please Enter Email-Id</div>
+      <div *ngIf="password.errors?.['required'] && password.touched" style="color: red;">Please Enter Password</div>
+  
+      <div *ngIf="emailId.errors?.['minlength'] && emailId.touched" style="color: red;">Please Enter At least 2 Characters
+        for EmailId</div>
+      <div *ngIf="password.errors?.['minlength'] && password.touched" style="color: red;">Please Enter At least 2
+        Characters for Password</div>
     </div>
-</div>
+  </div>
+  
