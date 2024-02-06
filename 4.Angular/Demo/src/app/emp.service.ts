@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 export class EmpService {
 
   isUserLoggedIn: boolean;
+  loginStatus: any;
 
   cartItems: any;
 
@@ -16,6 +18,7 @@ export class EmpService {
   constructor(private http: HttpClient) {
     this.isUserLoggedIn = false;
     this.cartItems = [];
+    this.loginStatus = new Subject();
   }
 
   getAllCountries(): any {
@@ -53,6 +56,7 @@ export class EmpService {
   //Login
   setIsUserLoggedIn() {
     this.isUserLoggedIn = true;
+    this.loginStatus.next(true);
   }
 
   getIsUserLogged(): boolean {
@@ -77,8 +81,13 @@ export class EmpService {
     this.cartItems = count;
   }
 
+  getLoginStatus(): any {
+    return this.loginStatus.asObservable();
+  }
+
   //Logout
   setIsUserLoggedOut() {
     this.isUserLoggedIn = false;
+    this.loginStatus.next(true);
   }
 }
