@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import org.mindrot.jbcrypt.BCrypt;
 
 @Entity
 public class Employee {
@@ -43,7 +42,7 @@ public class Employee {
         this.doj = doj;
         this.country = country;
         this.emailId = emailId;
-        this.password = hashPassword(password);
+        this.password = password;
         this.phoneNumber = phoneNumber;
         this.otp = otp;
     }
@@ -57,7 +56,7 @@ public class Employee {
         this.doj = doj;
         this.country = country;
         this.emailId = emailId;
-        this.password = hashPassword(password);
+        this.password = password;
         this.phoneNumber = phoneNumber;
         this.otp = otp;
     }
@@ -145,15 +144,8 @@ public class Employee {
     }
 
     public void setPassword(String password) {
-        this.password = hashPassword(password);
+    	this.password = password;
     }
 
-    public boolean checkPassword(String candidatePassword) {
-        return BCrypt.checkpw(candidatePassword, this.password);
-    }
-
-    // Hash the password using BCrypt
-    private String hashPassword(String plainTextPassword) {
-        return BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
-    }
 }
+
