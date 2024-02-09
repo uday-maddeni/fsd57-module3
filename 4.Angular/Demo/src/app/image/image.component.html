@@ -23,10 +23,7 @@
 <hr />
 <hr />
 
-
-
 <hr />
-
 
 <div class="container row">
   <div class="col-md-6">
@@ -49,41 +46,12 @@
 <br>
 <hr/>
 
-
-
-
-
-
 <!-- Button to get all images -->
 <div class="container row">
   <div class="col-md-6">
     <input type="button" (click)="getAllImages()" value="Get All Images">
   </div>
 </div>
-
-<!-- Display the image using an img tag with the base64-encoded image data -->
-<!-- <div *ngFor="let image of allImages">
-  <ng-container *ngIf="image.picByte">
-    <h3>Name: {{ image.name }}</h3>
-    <p>Type: {{ image.type }}</p>
-    <p>Category: {{ image.category }}</p>
-    <img [src]="image.picByte" alt="{{ image.name }}">
-    <hr />
-  </ng-container>
-</div> -->
-
-
-<!--
-<div class="container row">
-  <div class="col-md-12">
-    <h1>All Images</h1>
-    <div *ngFor="let image of allImages">
-      <img *ngIf="image.picByte" [src]="image.picByte" alt="{{ image.name }}">
-      <hr />
-    </div>
-  </div>
-</div>
--->
 
 
 <!-- Display the image using an img tag with the base64-encoded image data -->

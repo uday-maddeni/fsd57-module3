@@ -25,30 +25,3 @@ export class HeaderComponent implements OnInit {
     });
   }
 }
-
-
-
-
-// import { Component, OnInit } from '@angular/core';
-// import { EmpService } from '../emp.service';
-
-// @Component({
-//   selector: 'app-header',
-//   templateUrl: './header.component.html',
-//   styleUrl: './header.component.css'
-// })
-// export class HeaderComponent implements OnInit {
-
-//   loginStatus: any;
-
-//   constructor(private service: EmpService) {
-//   }
-
-//   ngOnInit() {
-//     this.service.getLoginStatus().subscribe((data: any) => {
-//       this.loginStatus = data;
-//     });
-//   }
-
-// }
-
